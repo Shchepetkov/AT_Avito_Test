@@ -1,6 +1,7 @@
 package ru.avito.stepDef;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -54,5 +55,9 @@ public class PageAvito extends PageAbstract {
             System.out.println(avitoElements.printersPrices.get(i).getText());
             System.out.println();
         }
+    }
+
+    public void getScreenshot() {
+        takeScreenshot(webdriver().driver().getWebDriver());
     }
 }
