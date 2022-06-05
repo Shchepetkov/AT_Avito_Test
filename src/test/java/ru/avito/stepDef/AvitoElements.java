@@ -35,4 +35,10 @@ public class AvitoElements {
 
     @FindBy(xpath = "//span[@data-marker='item-price']/span[contains(@class,'price')]")
     public List<SelenideElement> printersPrices;
+
+    @FindBy(css = "div.index-topPanel-McfCA  select.select-select-IdfiC")
+    public SelenideElement selectFilter;
+
+    @FindBy(css = "#category")
+    public SelenideElement selectCategory;
 }
