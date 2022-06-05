@@ -31,13 +31,13 @@ public class PageAvitoTest {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 
-    @Step("В поле поиска ввести значение")
+    @Step("В поле поиска ввести значение {text}")
     @И("в поле поиска введено значение {word}")
     public void inSearchFieldInput(String text) {
         page.inputTextArea(text);
     }
 
-    @Step("В выпадающем списке категорий выбрать категорию")
+    @Step("В выпадающем списке категорий выбрать категорию {category}")
     @И("в выпадающем списке категорий выбрана {categories}")
     public void inDropDownListCategoryChoose(Categories category) {
         page.selectCategory(category.getName());
@@ -55,7 +55,7 @@ public class PageAvitoTest {
         page.clickOnFieldCity();
     }
 
-    @Step("В поле регион ввести значение")
+    @Step("В поле регион ввести значение {word}")
     @Тогда("в поле регион введено значение {word}")
     public void inFieldCityInput(String city) {
         page.searchForCity(city);
@@ -67,19 +67,19 @@ public class PageAvitoTest {
         page.clickOnButton();
     }
 
-    @Step("Открылась страница результаты по искомому запросу")
+    @Step("Открылась страница результаты по запросу {word}")
     @Тогда("открылась страница результаты по запросу {word}")
     public void openedPageOnRequest(String word) {
         page.checkOpenedPage(word);
     }
 
-    @Step("В выпадающем списке сортировка выбрать нужное значение")
+    @Step("В выпадающем списке сортировка выбрать нужное значение {filters}")
     @И("в выпадающем списке сортировка выбрано значение {filters}")
     public void inDropDownListSortChoose(Filters filter) {
         page.selectFilter(filter.getName());
     }
 
-    @Step("Вывести в консоль значение названия и цены нужного количества товаров")
+    @Step("Вывести в консоль значение названия и цены {word} товаров")
     @И("в консоль выведено значение названия и цены {word} первых товаров")
     public void nameAndPriceOfProduct(String count) {
         page.nameAndPrice(Integer.parseInt(count));
