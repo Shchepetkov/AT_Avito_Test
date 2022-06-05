@@ -1,7 +1,6 @@
 package ru.avito.stepDef;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 
 import static com.codeborne.selenide.Selenide.*;
 
