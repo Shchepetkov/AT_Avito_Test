@@ -66,16 +66,11 @@ public class PageAvito extends PageAbstract {
     @DisplayName("В выпадающем списке сортировка выбрать нужное значение")
     public void selectFilter(String sortValue) {
         avitoElements.selectFilter.selectOption(sortValue);
-//        select(driver.findElement
-//                (By.cssSelector("div.index-topPanel-McfCA  select.select-select-IdfiC")))
-//                .selectByVisibleText(sortValue);
-
     }
+
     @DisplayName("В выпадающем списке категорий выбрать категорию")
     public void selectCategory(String category) {
         avitoElements.selectCategory.selectOption(category);
-//        select(driver.findElement(By.cssSelector("#category")))
-//                .selectByVisibleText(category);
     }
 
     public void getScreenshot() {
