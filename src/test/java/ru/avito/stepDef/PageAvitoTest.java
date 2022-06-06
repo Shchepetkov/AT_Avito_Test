@@ -1,7 +1,6 @@
 package ru.avito.stepDef;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;
@@ -9,7 +8,8 @@ import io.cucumber.java.bg.И;
 import io.cucumber.java.ru.Пусть;
 import io.cucumber.java.ru.Тогда;
 import io.qameta.allure.Step;
-import io.qameta.allure.selenide.AllureSelenide;
+import ru.avito.stepDef.enumeration.Categories;
+import ru.avito.stepDef.enumeration.Filters;
 
 public class PageAvitoTest {
     private PageAvito page;
@@ -28,7 +28,6 @@ public class PageAvitoTest {
     @Пусть("открыт ресурс авито")
     public void before() {
         page = new PageAvito();
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(false));
     }
 
     @Step("В поле поиска ввести значение {text}")
@@ -55,7 +54,7 @@ public class PageAvitoTest {
         page.clickOnFieldCity();
     }
 
-    @Step("В поле регион ввести значение {word}")
+    @Step("В поле регион ввести значение {city}")
     @Тогда("в поле регион введено значение {word}")
     public void inFieldCityInput(String city) {
         page.searchForCity(city);
@@ -73,13 +72,13 @@ public class PageAvitoTest {
         page.checkOpenedPage(word);
     }
 
-    @Step("В выпадающем списке сортировка выбрать нужное значение {filters}")
+    @Step("В выпадающем списке сортировка выбрать нужное значение {filter}")
     @И("в выпадающем списке сортировка выбрано значение {filters}")
     public void inDropDownListSortChoose(Filters filter) {
         page.selectFilter(filter.getName());
     }
 
-    @Step("Вывести в консоль значение названия и цены {word} товаров")
+    @Step("Вывести в консоль значение названия и цены {count} товаров")
     @И("в консоль выведено значение названия и цены {word} первых товаров")
     public void nameAndPriceOfProduct(String count) {
         page.nameAndPrice(Integer.parseInt(count));

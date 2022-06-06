@@ -1,4 +1,4 @@
-package ru.avito.stepDef;
+package ru.avito.stepDef.locators;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;

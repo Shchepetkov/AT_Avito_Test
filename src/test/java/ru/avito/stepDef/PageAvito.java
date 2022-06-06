@@ -1,7 +1,9 @@
 package ru.avito.stepDef;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
+import ru.avito.stepDef.locators.AvitoElements;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -56,10 +58,12 @@ public class PageAvito extends PageAbstract {
 
     @DisplayName("Вывести в консоль значение названия и цены нужного количества товаров")
     public void nameAndPrice(int count) {
-        for (int i = 0; i < count; i++) {
+        for (int i = 1; i <= count; i++) {
             System.out.println(avitoElements.printersNames.get(i).getText());
             System.out.println(avitoElements.printersPrices.get(i).getText());
             System.out.println();
+            Allure.addAttachment(String.format("Вывести в консоль значение названия и цену %s товарова", i),
+                    String.format("Название: %s,\n Цена: %s",avitoElements.printersNames.get(i).getText(), avitoElements.printersPrices.get(i).getText()));
         }
     }
 
