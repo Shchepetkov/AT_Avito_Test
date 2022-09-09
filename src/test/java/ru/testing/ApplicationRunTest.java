@@ -2,6 +2,7 @@ package ru.testing;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @SuppressWarnings("unused")
@@ -13,7 +14,7 @@ import org.junit.runner.RunWith;
 //        ,dryRun = true
 )
 public class ApplicationRunTest {
-    @org.junit.Test
+    @Test
     public static void run(String[] args) {
     }
 }
