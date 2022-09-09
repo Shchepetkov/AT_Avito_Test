@@ -1,4 +1,4 @@
-package ru.avito;
+package ru.testing;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -7,9 +7,10 @@ import org.junit.runner.RunWith;
 @SuppressWarnings("unused")
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/java/ru/avito/features",
-        glue = "ru.avito.stepDef",
-        tags = "@test"
+        features = "src/test/resources/features",
+        glue = "ru.testing.steps",
+        tags = "@avito or @google"
+//        ,dryRun = true
 )
 public class ApplicationRunTest {
     @org.junit.Test

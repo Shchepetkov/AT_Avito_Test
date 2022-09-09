@@ -1,4 +1,4 @@
-package ru.avito.stepDef.enumeration;
+package ru.testing.steps.features.avito.enumeration;
 
 @SuppressWarnings({"NonAsciiCharacters", "unused"})
 public enum Filters {

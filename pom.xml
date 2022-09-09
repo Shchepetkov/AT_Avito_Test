@@ -17,22 +17,35 @@
         <project.build.directory>target</project.build.directory>
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
-        <allure-junit4.version>2.17.3</allure-junit4.version>
+        <allure-junit4.version>2.19.0</allure-junit4.version>
         <org.jetbrains>23.0.0</org.jetbrains>
-        <io.cucumber.java>7.3.3</io.cucumber.java>
-        <io.cucumber.junit>7.3.3</io.cucumber.junit>
+        <io.cucumber.java>7.6.0</io.cucumber.java>
+        <io.cucumber.junit>7.6.0</io.cucumber.junit>
         <junit>4.13.2</junit>
         <allure-maven>2.10.0</allure-maven>
 
-        <selenium-api>4.1.4</selenium-api>
-        <selenium-support>4.1.4</selenium-support>
+        <selenium-api>4.4.0</selenium-api>
+        <selenium-support>4.4.0</selenium-support>
         <ashot>1.5.4</ashot>
-        <selenium-chrome-driver>4.1.4</selenium-chrome-driver>
-        <selenide>6.5.1</selenide>
-        <allure-selenide>2.17.3</allure-selenide>
+        <selenium-chrome-driver>4.4.0</selenium-chrome-driver>
+        <selenide>6.7.4</selenide>
+        <allure-selenide>2.19.0</allure-selenide>
+        <webdrivermanager>5.3.0</webdrivermanager>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.selenide</groupId>
+            <artifactId>selenide-selenoid</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager}</version>
+        </dependency>
+
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>

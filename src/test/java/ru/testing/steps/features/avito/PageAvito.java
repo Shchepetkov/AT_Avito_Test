@@ -1,19 +1,15 @@
-package ru.avito.stepDef;
+package ru.testing.steps.features.avito;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
-import ru.avito.stepDef.locators.AvitoElements;
+import ru.testing.steps.PageAbstract;
+import ru.testing.steps.locators.AvitoElements;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class PageAvito extends PageAbstract {
     private final AvitoElements avitoElements = page(AvitoElements.class);
-
-    public PageAvito() {
-        open("https://www.avito.ru/");
-        webdriver().object().manage().window().maximize();
-    }
 
     @DisplayName("В поле поиска ввести значение")
     public void inputTextArea(String text) {
@@ -63,7 +59,7 @@ public class PageAvito extends PageAbstract {
             System.out.println(avitoElements.printersPrices.get(i).getText());
             System.out.println();
             Allure.addAttachment(String.format("Вывести в консоль значение названия и цену %s товарова", i),
-                    String.format("Название: %s,\n Цена: %s",avitoElements.printersNames.get(i).getText(), avitoElements.printersPrices.get(i).getText()));
+                    String.format("Название: %s,\n Цена: %s", avitoElements.printersNames.get(i).getText(), avitoElements.printersPrices.get(i).getText()));
         }
     }
 
@@ -77,7 +73,9 @@ public class PageAvito extends PageAbstract {
         avitoElements.selectCategory.selectOption(category);
     }
 
-    public void getScreenshot() {
-        takeScreenshot(webdriver().driver().getWebDriver());
+    @Override
+    public void openSite() {
+        open("https://www.avito.ru/");
+        webdriver().object().manage().window().maximize();
     }
 }
