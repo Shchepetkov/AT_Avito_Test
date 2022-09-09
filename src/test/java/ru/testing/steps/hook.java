@@ -39,6 +39,7 @@ public class hook {
 
     @After
     public void closeDriver(Scenario scenario) {
+        //Разработать логер по шагам
         System.out.println(scenario.getId());
         System.out.println(scenario.getName());
         System.out.println(scenario.getStatus());
