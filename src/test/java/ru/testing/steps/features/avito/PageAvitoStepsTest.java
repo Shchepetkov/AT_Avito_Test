@@ -39,10 +39,10 @@ public class PageAvitoStepsTest {
         LOGGER.log(Level.INFO, String.format("В поиска введено значение %s", text));
     }
 
-    @Step("В выпадающем списке категорий выбрать категорию {category}")
-    @И("в выпадающем списке категорий выбрана {categories}")
-    public void inDropDownListCategoryChoose(Categories category) {
-        pageAvito.selectCategory(category.getName());
+    @Step("В выпадающем списке все категории в разделе {section} выбрать категорию {category}")
+    @И("в выпадающем списке все категории в разделе {word} выбрана {categories}")
+    public void inDropDownListCategoryChoose(String section, Categories category) {
+        pageAvito.selectCategory(section, category.getName());
         LOGGER.log(Level.INFO, String.format("В выпадающем списке категорий выбрана %s", category.getName()));
     }
 

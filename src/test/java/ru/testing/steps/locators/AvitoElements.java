@@ -40,5 +40,15 @@ public class AvitoElements {
     public SelenideElement selectFilter;
 
     @FindBy(css = "#category")
-    public SelenideElement selectCategory;
+    public SelenideElement selectFromListCategory;
+
+    @FindBy(xpath = "//span[contains(text(), 'категории')]/ancestor::button")
+    public SelenideElement selectAllCategory;
+
+    public static String selectCategory = "//div[@class = 'new-rubricator-content-childrenWrapper-gBEcA']/descendant::*[text() = '%1$s']";
+
+    public static String selectCategoryOld = "//*[text() = '%1$s']";
+
+    public static String section = "//div[@class = 'new-rubricator-content-root-X25iB']/descendant::*[text() = '%1$s']";
+
 }

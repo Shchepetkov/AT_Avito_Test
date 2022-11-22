@@ -17,20 +17,20 @@
         <project.build.directory>target</project.build.directory>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
-        <allure-junit4.version>2.19.0</allure-junit4.version>
+        <allure-junit4.version>2.20.0</allure-junit4.version>
         <org.jetbrains>23.0.0</org.jetbrains>
-        <io.cucumber.java>7.6.0</io.cucumber.java>
-        <io.cucumber.junit>7.6.0</io.cucumber.junit>
+        <io.cucumber.java>7.8.1</io.cucumber.java>
+        <io.cucumber.junit>7.8.1</io.cucumber.junit>
         <junit>4.13.2</junit>
         <allure-maven>2.10.0</allure-maven>
 
-        <selenium-api>4.4.0</selenium-api>
-        <selenium-support>4.4.0</selenium-support>
+        <selenium-api>4.6.0</selenium-api>
+        <selenium-support>4.6.0</selenium-support>
         <ashot>1.5.4</ashot>
-        <selenium-chrome-driver>4.4.0</selenium-chrome-driver>
-        <selenide>6.7.4</selenide>
-        <allure-selenide>2.19.0</allure-selenide>
-        <webdrivermanager>5.3.0</webdrivermanager>
+        <selenium-chrome-driver>4.6.0</selenium-chrome-driver>
+        <selenide>6.9.0</selenide>
+        <allure-selenide>2.20.0</allure-selenide>
+        <webdrivermanager>5.3.1</webdrivermanager>
     </properties>
 
     <dependencies>

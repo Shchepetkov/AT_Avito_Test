@@ -1,12 +1,17 @@
 package ru.testing.steps.features.avito;
 
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Allure;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import ru.testing.steps.PageAbstract;
 import ru.testing.steps.locators.AvitoElements;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.*;
+import static utils.XPathUtils.formatSearch;
 
 public class PageAvito extends PageAbstract {
     private final AvitoElements avitoElements = page(AvitoElements.class);
@@ -69,8 +74,17 @@ public class PageAvito extends PageAbstract {
     }
 
     @DisplayName("В выпадающем списке категорий выбрать категорию")
-    public void selectCategory(String category) {
-        avitoElements.selectCategory.selectOption(category);
+    public void selectCategory(String section, String category) {
+        if (avitoElements.selectAllCategory.exists())
+            avitoElements.selectAllCategory.shouldBe(Condition.visible).click();
+        else
+            avitoElements.selectFromListCategory.shouldBe(Condition.visible).selectOption(category);
+
+        if ($(By.xpath(formatSearch(AvitoElements.section, section))).exists()) {
+            $(By.xpath(formatSearch(AvitoElements.section, section))).shouldBe(Condition.visible).click();
+            $$(By.xpath(formatSearch(AvitoElements.selectCategory, category))).first().shouldBe(Condition.visible).click();
+        } else
+            $$(By.xpath(formatSearch(AvitoElements.selectCategoryOld, category))).first().click();
     }
 
     @Override
