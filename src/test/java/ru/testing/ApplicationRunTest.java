@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "ru.testing.steps",
-        tags = "@avito or @google"
+        tags = "@avito"
 //        ,dryRun = true
 )
 public class ApplicationRunTest {
