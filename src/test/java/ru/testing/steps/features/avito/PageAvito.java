@@ -79,7 +79,11 @@ public class PageAvito extends PageAbstract {
             avitoElements.selectAllCategory.shouldBe(Condition.visible).click();
         else
             avitoElements.selectFromListCategory.shouldBe(Condition.visible).selectOption(category);
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         if ($(By.xpath(formatSearch(AvitoElements.section, section))).exists()) {
             $(By.xpath(formatSearch(AvitoElements.section, section))).shouldBe(Condition.visible).click();
             $$(By.xpath(formatSearch(AvitoElements.selectCategory, category))).first().shouldBe(Condition.visible).click();

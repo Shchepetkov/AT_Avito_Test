@@ -28,7 +28,7 @@
         <selenium-support>4.6.0</selenium-support>
         <ashot>1.5.4</ashot>
         <selenium-chrome-driver>4.6.0</selenium-chrome-driver>
-        <selenide>6.9.0</selenide>
+        <selenide>6.10.0</selenide>
         <allure-selenide>2.20.0</allure-selenide>
         <webdrivermanager>5.3.1</webdrivermanager>
 

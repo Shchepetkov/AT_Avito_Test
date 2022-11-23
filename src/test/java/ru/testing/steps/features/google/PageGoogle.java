@@ -1,6 +1,7 @@
 package ru.testing.steps.features.google;
 
 import io.qameta.allure.junit4.DisplayName;
+import org.openqa.selenium.By;
 import ru.testing.steps.PageAbstract;
 import ru.testing.steps.locators.GoogleElements;
 
@@ -18,6 +19,11 @@ public class PageGoogle extends PageAbstract {
     @DisplayName("Нажать на кнопку Поиск в Google")
     public void clickFindGoogle() {
         googleElements.findForGoogleButton.click();
+    }
+
+    @DisplayName("Нажать на кнопку Поиск в Google")
+    public void clickSite() {
+        $$(By.xpath("//*[contains(text(),'Авито')]")).first().click();
     }
 
     @Override

@@ -5,7 +5,6 @@ import io.cucumber.java.ru.Пусть;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 
-import java.util.logging.Level;
 
 public class PageGoogleStepsTest {
     private final PageGoogle pageGoogle = new PageGoogle();
@@ -29,6 +28,10 @@ public class PageGoogleStepsTest {
     @И("нажать на кнопку Поиск в Google")
     public void clickButton() {
         pageGoogle.clickFindGoogle();
+    }
 
+    @И("нажать на ссылку Авито")
+    public void clickButtonSite() {
+        pageGoogle.clickSite();
     }
 }
