@@ -14,15 +14,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <project.build.directory>target</project.build.directory>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <aspectj.version>1.9.6</aspectj.version>
         <allure-junit4.version>2.20.0</allure-junit4.version>
-        <org.jetbrains>23.0.0</org.jetbrains>
-        <io.cucumber.java>7.8.1</io.cucumber.java>
         <io.cucumber.junit>7.8.1</io.cucumber.junit>
-        <junit>4.13.2</junit>
-        <allure-maven>2.10.0</allure-maven>
 
         <selenium-api>4.6.0</selenium-api>
         <selenium-support>4.6.0</selenium-support>
@@ -32,13 +27,7 @@
         <allure-selenide>2.20.0</allure-selenide>
         <webdrivermanager>5.3.1</webdrivermanager>
 
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <project.build.directory>target</project.build.directory>
-        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <aspectj.version>1.8.10</aspectj.version>
+        <project.build.path.from.target>target</project.build.path.from.target>
         <allure-maven.version>2.12.0</allure-maven.version>
         <selenium-java.version>4.6.0</selenium-java.version>
         <allure-testng.version>2.20.0</allure-testng.version>
@@ -46,7 +35,6 @@
         <cucumber.version>7.8.1</cucumber.version>
         <allure-commandline.version>2.20.0</allure-commandline.version>
         <ashot>1.5.4</ashot>
-
     </properties>
 
     <dependencies>
@@ -55,13 +43,11 @@
             <artifactId>selenide-selenoid</artifactId>
             <version>2.2.4</version>
         </dependency>
-
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager}</version>
         </dependency>
-
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit4</artifactId>
@@ -69,22 +55,10 @@
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${io.cucumber.java}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
             <version>${io.cucumber.junit}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit}</version>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-api</artifactId>
@@ -95,12 +69,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-support</artifactId>
             <version>${selenium-support}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>ru.yandex.qatools.ashot</groupId>
-            <artifactId>ashot</artifactId>
-            <version>${ashot}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -120,7 +88,48 @@
             <version>${allure-selenide}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <version>${allure-maven.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure-testng.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>${ashot}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-commandline</artifactId>
+            <version>${allure-commandline.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -137,7 +146,7 @@
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
-                            <value>target/allure-results</value>
+                            <value>${project.build.path.from.target}/allure-results</value>
                         </property>
                     </systemProperties>
                 </configuration>

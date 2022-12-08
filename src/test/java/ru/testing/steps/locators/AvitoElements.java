@@ -18,6 +18,9 @@ public class AvitoElements {
     @FindBy(xpath = "//span[contains(text(), 'фото')]")
     public SelenideElement checkBoxStatus;
 
+    @FindBy(xpath = "//span[contains(text(),'только в названиях')]")
+    public SelenideElement onlyNames;
+
     @FindBy(css = "input[data-marker = 'popup-location/region/input']")
     public SelenideElement location;
 

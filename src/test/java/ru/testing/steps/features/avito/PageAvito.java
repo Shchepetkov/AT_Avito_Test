@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import ru.testing.steps.PageAbstract;
 import ru.testing.steps.locators.AvitoElements;
 
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.*;
 import static utils.XPathUtils.formatSearch;
@@ -46,10 +46,21 @@ public class PageAvito extends PageAbstract {
         avitoElements.searchOnLocationField.click();
     }
 
-    @DisplayName("Активировать чекбокс только с фотографией")
+    @DisplayName("Активировать любой чекбокс на странице")
     public void checkbox() {
-        if (!avitoElements.checkBoxStatus.isSelected())
-            avitoElements.checkBoxStatus.click();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("ssss");
+        if (avitoElements.checkBoxStatus.exists()) {
+            if (!avitoElements.checkBoxStatus.isSelected())
+                avitoElements.checkBoxStatus.click();
+        } else {
+            if (!avitoElements.onlyNames.isSelected())
+                avitoElements.onlyNames.click();
+        }
     }
 
     @DisplayName("Открылась страница результаты по искомому запросу")
@@ -95,5 +106,6 @@ public class PageAvito extends PageAbstract {
     public void openSite() {
         open("https://www.avito.ru/");
         webdriver().object().manage().window().maximize();
+        webdriver().driver().getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 }
